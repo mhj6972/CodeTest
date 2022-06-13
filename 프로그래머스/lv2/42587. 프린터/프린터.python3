@@ -1,0 +1,16 @@
+from collections import *
+
+def solution(prio, loc):
+    cnt = 0
+    item = deque([v,i] for i,v in enumerate(prio))
+    flag = True
+    while item:
+        temp = item.popleft()
+        if item and max(item)[0] > temp[0]:
+            item.append(temp)
+        else:
+            cnt+=1
+            if temp[1] == loc:
+                flag=False
+        if flag==False: break         
+    return cnt
