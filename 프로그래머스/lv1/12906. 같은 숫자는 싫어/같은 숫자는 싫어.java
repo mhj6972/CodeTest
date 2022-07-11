@@ -7,8 +7,7 @@ public class Solution {
         ArrayList<Integer> list = new ArrayList<>();
         list.add(arr[0]);
         for(int l:arr){
-            int temp = l;
-            if(list.get(list.size()-1).intValue() != temp) list.add(l);
+            if(list.get(list.size()-1).intValue() != l) list.add(l);
         }
     
         return list;
